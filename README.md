@@ -1,2 +1,3 @@
-# typescript-study
-My personal typescript study workspace
+# TypeScript-study
+
+My personal TypeScript study workspace
