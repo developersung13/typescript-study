@@ -1,4 +1,4 @@
-interface SStorage<T> {
+interface LocalStorageAPI<T> {
   [key: string]: T;
 }
 
@@ -10,7 +10,7 @@ abstract class UserStorage<T> {
 }
 
 class LocalStorage<T> extends UserStorage<T> {
-  private storage: SStorage<T> = {};
+  private storage: LocalStorageAPI<T> = {};
   setItem(key: string, value: T) {
     this.storage[key] = value;
   }
@@ -26,3 +26,14 @@ class LocalStorage<T> extends UserStorage<T> {
 }
 
 const sLS = new LocalStorage<string>();
+sLS.setItem("hello", "안녕");
+sLS.setItem("nice", "훌륭해");
+console.log(sLS.getItem("hello"));
+console.log(sLS.getItem("nice"));
+sLS.clearItem("hello");
+console.log(sLS.getItem("hello"));
+console.log(sLS.getItem("nice"));
+sLS.clear();
+console.log(sLS.getItem("nice"));
+
+interface GeolocationAPI {}
