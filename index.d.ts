@@ -1,15 +1,15 @@
 declare module "lodash" {
-  function head(array: any): any;
+  function head<T>(array: T[]): T | undefined;
   function hasIn(object: Object, key: string): boolean;
-  function isBoolean(value: any): boolean;
-  function toString(value: any): string;
-  function split(
+  function isBoolean<T>(value: T): boolean;
+  function toString<T>(value: T): string;
+  function split<T>(
     string: string | undefined,
     separator: RegExp | string,
     limit?: number | undefined
-  ): any[];
-  function hasPath(object: Object, path: any[] | string): boolean;
-  function filter(array: any[], predicate: Function): any[];
-  function every(array: any[], predicate: Function): boolean;
-  function map(array: any[], iteratee: Function): any[];
+  ): T[];
+  function hasPath<T>(object: Object, path: T[] | string): boolean;
+  function filter<T>(array: T[], predicate: Function): T[];
+  function every<T>(array: T[], predicate: Function): boolean;
+  function map<T, U>(array: T[], iteratee: Function): U[];
 }
