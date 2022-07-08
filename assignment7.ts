@@ -36,4 +36,12 @@ console.log(sLS.getItem("nice"));
 sLS.clear();
 console.log(sLS.getItem("nice"));
 
-interface GeolocationAPI {}
+interface GeolocationAPI {
+  getCurrentPosition(successFn: CallableFunction);
+  getCurrentPosition(successFn, errorFn);
+  getCurrentPosition(successFn, errorFn, optionsObj);
+  watchPosition(success);
+  watchPosition(success, error);
+  watchPosition(success, error, options);
+  clearWatch(id);
+}
